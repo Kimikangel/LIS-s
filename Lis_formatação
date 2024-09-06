@@ -1,0 +1,16 @@
+### --- IMPORTAÇÕES --- ###
+import re
+import operator
+import textdistance
+import nltk
+import pandas as pd
+from typing import Tuple
+from nltk.corpus import machado, floresta, genesis
+
+### --- DICIONÁRIOS E CONFIGURAÇÕES --- ###
+# Mapeamento de caracteres para normalização
+caracteres_substituir = {
+    'Á': 'A', 'À': 'A', 'Â': 'A', 'Ã': 'A', 'É': 'E', 'È': 'E', 'Ê': 'E', 
+    'Í': 'I', 'Ì': 'I', 'Î': 'I', 'Ó': 'O', 'Ò': 'O', 'Ô': 'O', 'Õ': 'O',
+    'Ú': 'U', 'Ù': 'U', 'Û': 'U', 'Ñ': 'N', 'Ç': 'C', '-': ' ', ':': ' '
+}
